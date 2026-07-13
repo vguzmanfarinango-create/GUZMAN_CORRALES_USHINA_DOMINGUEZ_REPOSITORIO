@@ -1,20 +1,35 @@
-document.getElementById("formulario").addEventListener("submit", function(e){
+const formulario = document.getElementById("formulario");
+
+formulario.addEventListener("submit", function(e){
 
     e.preventDefault();
 
-    let nombre = document.getElementById("nombre").value;
-    let apellido = document.getElementById("apellido").value;
-    let edad = document.getElementById("edad").value;
-    let cedula = document.getElementById("cedula").value;
-    let curso = document.getElementById("curso").value;
+    const nombre = document.getElementById("nombre").value;
+    const apellido = document.getElementById("apellido").value;
+    const edad = document.getElementById("edad").value;
+    const cedula = document.getElementById("cedula").value;
+    const curso = document.getElementById("curso").value;
 
-    document.getElementById("resultado").innerHTML = `
-        <h3>Datos Registrados</h3>
+    const resultado = document.getElementById("resultado");
 
-        <strong>Nombre:</strong> ${nombre}<br>
-        <strong>Apellido:</strong> ${apellido}<br>
-        <strong>Edad:</strong> ${edad} años<br>
-        <strong>Cédula:</strong> ${cedula}<br>
-        <strong>Curso:</strong> ${curso}
+    resultado.style.display = "block";
+
+    resultado.innerHTML = `
+
+        <h3><i class="fa-solid fa-circle-check"></i> Registro Exitoso</h3>
+
+        <p><strong>Nombre:</strong> ${nombre}</p>
+
+        <p><strong>Apellido:</strong> ${apellido}</p>
+
+        <p><strong>Edad:</strong> ${edad} años</p>
+
+        <p><strong>Cédula:</strong> ${cedula}</p>
+
+        <p><strong>Curso:</strong> ${curso}</p>
+
     `;
+
+    formulario.reset();
+
 });
