@@ -30,6 +30,14 @@ formulario.addEventListener("submit", function(e){
 
     `;
 
+});
+
+document.getElementById("limpiar").addEventListener("click", function(){
+
     formulario.reset();
+
+    const resultado = document.getElementById("resultado");
+    resultado.innerHTML = "";
+    resultado.style.display = "none";
 
 });
